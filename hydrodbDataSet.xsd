@@ -1,0 +1,111 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="hydrodbDataSet" targetNamespace="http://tempuri.org/hydrodbDataSet.xsd" xmlns:mstns="http://tempuri.org/hydrodbDataSet.xsd" xmlns="http://tempuri.org/hydrodbDataSet.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="hydrodbConnectionString1" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="hydrodbConnectionString1 (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.HydroAnalyzer_v0._4.Properties.Settings.GlobalReference.Default.hydrodbConnectionString1" Provider="MySql.Data.MySqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="hyddnevTableAdapter" GeneratorDataComponentClassName="hyddnevTableAdapter" Name="hyddnev" UserDataComponentName="hyddnevTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="hydrodbConnectionString1 (Settings)" DbObjectName="hydrodb.hyddnev" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT `Station`, `Dat`, `Stoej`, `Vkol`, `CodH`, `CodQ`, `Temp` FROM `hyddnev`</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings />
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="hydgodTableAdapter" GeneratorDataComponentClassName="hydgodTableAdapter" Name="hydgod" UserDataComponentName="hydgodTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="hydrodbConnectionString1 (Settings)" DbObjectName="hydrodb.hydgod" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT `Station`, `Dat`, `God_MinQ`, `God_AverQ`, `God_MaxQ`, `Cod` FROM `hydgod`</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings />
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="hydmesTableAdapter" GeneratorDataComponentClassName="hydmesTableAdapter" Name="hydmes" UserDataComponentName="hydmesTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="hydrodbConnectionString1 (Settings)" DbObjectName="hydrodb.hydmes" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT `Station`, `Dat`, `StoejMin`, `VkolMin`, `StoejSre`, `VkolSre`, `StoejMax`, `VkolMax` FROM `hydmes`</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings />
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="spisakhydTableAdapter" GeneratorDataComponentClassName="spisakhydTableAdapter" Name="spisakhyd" UserDataComponentName="spisakhydTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="hydrodbConnectionString1 (Settings)" DbObjectName="hydrodb.spisakhyd" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT `Station`, `NasMesto`, `ImeReka`, `Lati`, `Longi`, `Alti`, `Star`, `Branch`, `Img` FROM `spisakhyd`</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings />
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="usersTableAdapter" GeneratorDataComponentClassName="usersTableAdapter" Name="users" UserDataComponentName="usersTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="hydrodbConnectionString1 (Settings)" DbObjectName="hydrodb.users" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT `id`, `username`, `password` FROM `users`</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings />
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="hydrodbDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="hydrodbDataSet" msprop:Generator_UserDSName="hydrodbDataSet">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="hyddnev" msprop:Generator_TableClassName="hyddnevDataTable" msprop:Generator_TableVarName="tablehyddnev" msprop:Generator_TablePropName="hyddnev" msprop:Generator_RowDeletingName="hyddnevRowDeleting" msprop:Generator_RowChangingName="hyddnevRowChanging" msprop:Generator_RowEvHandlerName="hyddnevRowChangeEventHandler" msprop:Generator_RowDeletedName="hyddnevRowDeleted" msprop:Generator_UserTableName="hyddnev" msprop:Generator_RowChangedName="hyddnevRowChanged" msprop:Generator_RowEvArgName="hyddnevRowChangeEvent" msprop:Generator_RowClassName="hyddnevRow">
+          <xs:complexType>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="hydgod" msprop:Generator_TableClassName="hydgodDataTable" msprop:Generator_TableVarName="tablehydgod" msprop:Generator_TablePropName="hydgod" msprop:Generator_RowDeletingName="hydgodRowDeleting" msprop:Generator_RowChangingName="hydgodRowChanging" msprop:Generator_RowEvHandlerName="hydgodRowChangeEventHandler" msprop:Generator_RowDeletedName="hydgodRowDeleted" msprop:Generator_UserTableName="hydgod" msprop:Generator_RowChangedName="hydgodRowChanged" msprop:Generator_RowEvArgName="hydgodRowChangeEvent" msprop:Generator_RowClassName="hydgodRow">
+          <xs:complexType>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="hydmes" msprop:Generator_TableClassName="hydmesDataTable" msprop:Generator_TableVarName="tablehydmes" msprop:Generator_TablePropName="hydmes" msprop:Generator_RowDeletingName="hydmesRowDeleting" msprop:Generator_RowChangingName="hydmesRowChanging" msprop:Generator_RowEvHandlerName="hydmesRowChangeEventHandler" msprop:Generator_RowDeletedName="hydmesRowDeleted" msprop:Generator_UserTableName="hydmes" msprop:Generator_RowChangedName="hydmesRowChanged" msprop:Generator_RowEvArgName="hydmesRowChangeEvent" msprop:Generator_RowClassName="hydmesRow">
+          <xs:complexType>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="spisakhyd" msprop:Generator_TableClassName="spisakhydDataTable" msprop:Generator_TableVarName="tablespisakhyd" msprop:Generator_TablePropName="spisakhyd" msprop:Generator_RowDeletingName="spisakhydRowDeleting" msprop:Generator_RowChangingName="spisakhydRowChanging" msprop:Generator_RowEvHandlerName="spisakhydRowChangeEventHandler" msprop:Generator_RowDeletedName="spisakhydRowDeleted" msprop:Generator_UserTableName="spisakhyd" msprop:Generator_RowChangedName="spisakhydRowChanged" msprop:Generator_RowEvArgName="spisakhydRowChangeEvent" msprop:Generator_RowClassName="spisakhydRow">
+          <xs:complexType>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="users" msprop:Generator_TableClassName="usersDataTable" msprop:Generator_TableVarName="tableusers" msprop:Generator_TablePropName="users" msprop:Generator_RowDeletingName="usersRowDeleting" msprop:Generator_RowChangingName="usersRowChanging" msprop:Generator_RowEvHandlerName="usersRowChangeEventHandler" msprop:Generator_RowDeletedName="usersRowDeleted" msprop:Generator_UserTableName="users" msprop:Generator_RowChangedName="usersRowChanged" msprop:Generator_RowEvArgName="usersRowChangeEvent" msprop:Generator_RowClassName="usersRow">
+          <xs:complexType>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

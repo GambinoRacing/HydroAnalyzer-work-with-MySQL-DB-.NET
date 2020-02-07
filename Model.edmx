@@ -1,0 +1,198 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="ChartModel.Store" Provider="MySql.Data.MySqlClient" ProviderManifestToken="5.5" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <!--Errors Found During Generation:
+warning 6005: The data type 'ufloat' is currently not supported for the target Entity Framework version; the column 'Vkol' in the table 'def.hydrodb.hyddnev' was excluded.-->
+        <EntityType Name="hyddnev">
+          <Key>
+            <PropertyRef Name="Station" />
+            <PropertyRef Name="Dat" />
+          </Key>
+          <Property Name="Station" Type="int" Nullable="false" />
+          <Property Name="Dat" Type="datetime" Precision="0" Nullable="false" />
+          <Property Name="Stoej" Type="int" />
+          <Property Name="CodH" Type="varchar" MaxLength="1" />
+          <Property Name="CodQ" Type="varchar" MaxLength="1" />
+          <Property Name="Temp" Type="varchar" MaxLength="4" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6005: The data type 'ufloat' is currently not supported for the target Entity Framework version; the column 'God_MinQ' in the table 'def.hydrodb.hydgod' was excluded.
+warning 6005: The data type 'ufloat' is currently not supported for the target Entity Framework version; the column 'God_AverQ' in the table 'def.hydrodb.hydgod' was excluded.
+warning 6005: The data type 'ufloat' is currently not supported for the target Entity Framework version; the column 'God_MaxQ' in the table 'def.hydrodb.hydgod' was excluded.-->
+        <EntityType Name="hydgod">
+          <Key>
+            <PropertyRef Name="Station" />
+            <PropertyRef Name="Dat" />
+          </Key>
+          <Property Name="Station" Type="uint" Nullable="false" />
+          <Property Name="Dat" Type="datetime" Precision="0" Nullable="false" />
+          <Property Name="Cod" Type="varchar" MaxLength="255" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6005: The data type 'ufloat' is currently not supported for the target Entity Framework version; the column 'VkolMin' in the table 'def.hydrodb.hydmes' was excluded.
+warning 6005: The data type 'ufloat' is currently not supported for the target Entity Framework version; the column 'VkolSre' in the table 'def.hydrodb.hydmes' was excluded.
+warning 6005: The data type 'ufloat' is currently not supported for the target Entity Framework version; the column 'VkolMax' in the table 'def.hydrodb.hydmes' was excluded.-->
+        <EntityType Name="hydmes">
+          <Key>
+            <PropertyRef Name="Station" />
+            <PropertyRef Name="Dat" />
+          </Key>
+          <Property Name="Station" Type="uint" Nullable="false" />
+          <Property Name="Dat" Type="datetime" Precision="0" Nullable="false" />
+          <Property Name="StoejMin" Type="int" />
+          <Property Name="StoejSre" Type="int" />
+          <Property Name="StoejMax" Type="int" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6013: The table/view 'def.hydrodb.spisakhyd' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="spisakhyd">
+          <Property Name="Station" Type="int" />
+          <Property Name="NasMesto" Type="varchar" MaxLength="24" />
+          <Property Name="ImeReka" Type="varchar" MaxLength="20" />
+          <Property Name="Lati" Type="varchar" MaxLength="7" />
+          <Property Name="Longi" Type="varchar" MaxLength="7" />
+          <Property Name="Alti" Type="varchar" MaxLength="6" />
+          <Property Name="Star" Type="varchar" MaxLength="4" />
+          <Property Name="Branch" Type="varchar" MaxLength="6" />
+          <Property Name="Img" Type="varchar" MaxLength="3" />
+        </EntityType>-->
+        <EntityType Name="users">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="username" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="password" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="ChartModelStoreContainer">
+          <EntitySet Name="hyddnev" EntityType="Self.hyddnev" Schema="hydrodb" store:Type="Tables" />
+          <EntitySet Name="hydgod" EntityType="Self.hydgod" Schema="hydrodb" store:Type="Tables" />
+          <EntitySet Name="hydmes" EntityType="Self.hydmes" Schema="hydrodb" store:Type="Tables" />
+          <EntitySet Name="users" EntityType="Self.users" Schema="hydrodb" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="ChartModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="hyddnev">
+          <Key>
+            <PropertyRef Name="Station" />
+            <PropertyRef Name="Dat" />
+          </Key>
+          <Property Name="Station" Type="Int32" Nullable="false" />
+          <Property Name="Dat" Type="DateTime" Nullable="false" />
+          <Property Name="Stoej" Type="Int32" />
+          <Property Name="CodH" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="CodQ" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="Temp" Type="String" MaxLength="4" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="hydgod">
+          <Key>
+            <PropertyRef Name="Station" />
+            <PropertyRef Name="Dat" />
+          </Key>
+          <Property Name="Station" Type="Int64" Nullable="false" />
+          <Property Name="Dat" Type="DateTime" Nullable="false" />
+          <Property Name="Cod" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="hydme">
+          <Key>
+            <PropertyRef Name="Station" />
+            <PropertyRef Name="Dat" />
+          </Key>
+          <Property Name="Station" Type="Int64" Nullable="false" />
+          <Property Name="Dat" Type="DateTime" Nullable="false" />
+          <Property Name="StoejMin" Type="Int32" />
+          <Property Name="StoejSre" Type="Int32" />
+          <Property Name="StoejMax" Type="Int32" />
+        </EntityType>
+        <EntityType Name="user">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="username" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="password" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="ChartEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="hyddnevs" EntityType="Self.hyddnev" />
+          <EntitySet Name="hydgods" EntityType="Self.hydgod" />
+          <EntitySet Name="hydmes" EntityType="Self.hydme" />
+          <EntitySet Name="users" EntityType="Self.user" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="ChartModelStoreContainer" CdmEntityContainer="ChartEntities">
+          <EntitySetMapping Name="hyddnevs">
+            <EntityTypeMapping TypeName="ChartModel.hyddnev">
+              <MappingFragment StoreEntitySet="hyddnev">
+                <ScalarProperty Name="Station" ColumnName="Station" />
+                <ScalarProperty Name="Dat" ColumnName="Dat" />
+                <ScalarProperty Name="Stoej" ColumnName="Stoej" />
+                <ScalarProperty Name="CodH" ColumnName="CodH" />
+                <ScalarProperty Name="CodQ" ColumnName="CodQ" />
+                <ScalarProperty Name="Temp" ColumnName="Temp" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="hydgods">
+            <EntityTypeMapping TypeName="ChartModel.hydgod">
+              <MappingFragment StoreEntitySet="hydgod">
+                <ScalarProperty Name="Station" ColumnName="Station" />
+                <ScalarProperty Name="Dat" ColumnName="Dat" />
+                <ScalarProperty Name="Cod" ColumnName="Cod" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="hydmes">
+            <EntityTypeMapping TypeName="ChartModel.hydme">
+              <MappingFragment StoreEntitySet="hydmes">
+                <ScalarProperty Name="Station" ColumnName="Station" />
+                <ScalarProperty Name="Dat" ColumnName="Dat" />
+                <ScalarProperty Name="StoejMin" ColumnName="StoejMin" />
+                <ScalarProperty Name="StoejSre" ColumnName="StoejSre" />
+                <ScalarProperty Name="StoejMax" ColumnName="StoejMax" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="users">
+            <EntityTypeMapping TypeName="ChartModel.user">
+              <MappingFragment StoreEntitySet="users">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="username" ColumnName="username" />
+                <ScalarProperty Name="password" ColumnName="password" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="true" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
